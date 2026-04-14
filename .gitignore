@@ -1,0 +1,18 @@
+# Active-hdl generated folders
+**/compile/
+**/bin/
+**/log/
+
+# Active-hdl working files
+*.p_w
+*.bak
+*.log
+library.cfg
+
+# Simulation results
+*.asdb
+*.awf
+
+# OS junk
+.DS_Store
+Thumbs.db
