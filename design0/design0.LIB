@@ -1,0 +1,33 @@
+timestamp=1776259754175
+
+[nonlinearlut]
+A/arch=21|./src/NonLinearLut.vhd|11|1*0
+B/arch=3*0
+H/arch=0*1109
+R=./src/NonLinearLut.vhd|4
+V=0*3679
+
+[nonlinearlut_tb]
+A/arch=21|C:/Users/forsan zag/OneDrive/Desktop/NonLinearLut/NonLinearLut_TB.vhd|8|1*3570
+B/arch=3*4492
+H/arch=0*4745
+R=C:/Users/forsan zag/OneDrive/Desktop/NonLinearLut/NonLinearLut_TB.vhd|5
+V=0*648
+
+[~A]
+./src/NonLinearLut.vhd~NonlinearLut=0*787*1034
+./src/NonLinearLut.vhd~archNonlinearLut=0*1826*3009
+C:/Users/forsan zag/OneDrive/Desktop/NonLinearLut/NonLinearLut_TB.vhd~NonlinearLut_TB=0*0*230
+C:/Users/forsan zag/OneDrive/Desktop/NonLinearLut/NonLinearLut_TB.vhd~archNonlinearLut_TB=0*6766*7364
+ModifyID=14
+Version=73
+
+[~MFT]
+0=15|0design0.mgf|7364|0
+1=1|1design0.mgf|3570|0
+3=1|3design0.mgf|4492|0
+
+[~U]
+nonlinearlut=NonlinearLut 11|0*3088|0*3267
+nonlinearlut_tb=NonlinearLut_TB 11|0*355|0*441
+
