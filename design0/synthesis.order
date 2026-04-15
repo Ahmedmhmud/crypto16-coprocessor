@@ -1,3 +1,1 @@
-i<>.\src\ALU.vhd
-i<>.\src\Full_Adder.vhd
-i<>.\src\Adder_16bit.vhd
+i<>.\src\Adder-16bit_TB.vhd

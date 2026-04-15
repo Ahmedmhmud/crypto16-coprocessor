@@ -1,3 +1,4 @@
 .\src\ALU.vhd
 .\src\Full_Adder.vhd
 .\src\Adder_16bit.vhd
+.\src\Adder_16bit_TB.vhd
