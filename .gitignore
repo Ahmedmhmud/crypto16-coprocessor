@@ -13,6 +13,14 @@ library.cfg
 *.asdb
 *.awf
 
+# generated FPGA files
+design0/*.mgf
+design0/*.cfg
+design0/*.order
+design0/*.LIB
+design0/*.adf
+design0/*.wsp
+
 # OS junk
 .DS_Store
 Thumbs.db
