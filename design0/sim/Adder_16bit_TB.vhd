@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity Adder_16bit_TB is
 end entity;
@@ -20,10 +21,52 @@ UUT : entity Adder_16bit
 		cout => cout_tb
 		);
 		
-A_tb <= x"1010";      
-B_tb <= x"0010";
+Driver: process
 
-Cin_tb <= '0';			
+begin
+  
+	
+a_tb <= std_logic_vector(to_unsigned(10, 16));
+        
+b_tb <= std_logic_vector(to_unsigned(20, 16));
+   
+
+cin_tb <= '0';
+        
+wait for 20 ns;
+
+  
+
+        
+cin_tb <= '1';
+        
+wait for 20 ns;
+
+
+
+a_tb <= x"FFFF";        
+b_tb <= x"0001";
+        
+cin_tb <= '0';
+ 
+
+wait for 20 ns; --  sum=0000, cout=1
+
+   
+
+a_tb <= x"0010";
+        
+b_tb <= x"0101";
+        
+wait for 20 ns;
+
+  
+
+report "16-bit Adder Testbench Finished Successfully";
+        
+wait;
+    
+end process;			
 	
 	
 end architecture;
