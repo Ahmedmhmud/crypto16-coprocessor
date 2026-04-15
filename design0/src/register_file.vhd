@@ -24,11 +24,11 @@ begin
 			if(wrt = '1') then
 				registers(to_integer(unsigned(Rd))) <= result; -- assign the result value in Rd register 
 			end if;	   
-			-- take the values stored in Ra&Rb
+		end if;
+	end process; 
+	-- take the values stored in Ra&Rb
 			ABUS <= registers(to_integer(unsigned(Ra)));
             BBUS <= registers(to_integer(unsigned(Rb)));
-		end if;
-	end process;  
 	end architecture;
 	
 	
