@@ -22,5 +22,21 @@ SYNTH_TOOL=<none>
 IMPL_TOOL=<none>
 FAMILY=
 FLOWTOOLS=ONLY_IMPL
+
 [IMPLEMENTATION]
 UCF=
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=
+
+[Groups]
+
+[Files]
+/ALU.vhd=-1
+
+[Files.Data]
+.\src\ALU.vhd=VHDL Source Code
+

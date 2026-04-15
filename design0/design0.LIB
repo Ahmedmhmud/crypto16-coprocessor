@@ -1,0 +1,17 @@
+timestamp=1776242502324
+
+[alu]
+R=./src/ALU.vhd|5
+V=0*1199
+
+[~A]
+./src/ALU.vhd~ALU=0*0*299
+ModifyID=3
+Version=73
+
+[~MFT]
+0=4|0design0.mgf|1199|0
+
+[~U]
+alu=ALU 11|0*356|0*568
+
