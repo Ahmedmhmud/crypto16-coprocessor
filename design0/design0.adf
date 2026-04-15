@@ -28,7 +28,7 @@ UCF=
 
 [HierarchyViewer]
 SortInfo=u
-HierarchyInformation=adder_16bit_tb|sim|0
+HierarchyInformation=adder_16bit_tb|sim|0 alu_tb|sim|0 
 ShowHide=ShowTopLevel
 Selected=
 
@@ -38,11 +38,19 @@ Selected=
 /ALU.vhd=-1
 /Full_Adder.vhd=-1
 /Adder_16bit.vhd=-1
-/Adder_16bit_TB.vhd=-1
+/\sim\Adder_16bit_TB.vhd=-1
+/\sim\Waveform Editor 5.awf=-1
+/\sim\ALU_TB.vhd=-1
+/OP_codes.vhd=-1
+/\sim\Waveform Editor 7.awf=-1
 
 [Files.Data]
 .\src\ALU.vhd=VHDL Source Code
 .\src\Full_Adder.vhd=VHDL Source Code
 .\src\Adder_16bit.vhd=VHDL Source Code
-.\src\Adder_16bit_TB.vhd=VHDL Source Code
+.\sim\Adder_16bit_TB.vhd=VHDL Source Code
+.\sim\Waveform Editor 5.awf=Waveform File
+.\sim\ALU_TB.vhd=VHDL Source Code
+.\src\OP_codes.vhd=VHDL Source Code
+.\sim\Waveform Editor 7.awf=Waveform File
 

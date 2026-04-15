@@ -1,4 +1,4 @@
-timestamp=1776258154310
+timestamp=1776261309734
 
 [adder_16bit]
 A/struct=21|./src/Adder_16bit.vhd|16|1*20292
@@ -9,15 +9,30 @@ V=0*6718
 
 [adder_16bit_tb]
 A/behavioral=A/Behavioral +21|./src/Adder-16bit_TB.vhd|8|1*8719
-A/sim=21|./src/Adder_16bit_TB.vhd|9|1*26980
+A/sim=21|./sim/Adder_16bit_TB.vhd|9|1*29185
 B/sim=3*11991
-H/sim=0*46341
+H/sim=0*48737
 R=./src/Adder_16bit_TB.vhd|5
 V=0*46249
 
 [alu]
+A/struct=21|./src/ALU.vhd|15|1*36511
+B/struct=3*14226
+H/struct=0*61927
 R=./src/ALU.vhd|5
-V=0*1199
+V=0*64711
+
+[alu_pkg]
+E=1*34262
+R=./src/OP_codes.vhd|4
+V=0*57931
+
+[alu_tb]
+A/sim=21|./sim/ALU_TB.vhd|9|1*40604
+B/sim=3*17780
+H/sim=0*66988
+R=./sim/ALU_TB.vhd|6
+V=0*70295
 
 [full_adder]
 A/dataflow=A/DataFlow 21|./src/Full_Adder.vhd|13|1*19016
@@ -27,7 +42,11 @@ R=./src/Full_Adder.vhd|4
 V=0*3991
 
 [~A]
-./src/ALU.vhd~ALU=0*0*299
+./sim/ALU_TB.vhd~ALU_TB=0*66742*66925
+./sim/ALU_TB.vhd~simALU_TB=0*68930*69951
+./sim/Adder_16bit_TB.vhd~simAdder_16bit_TB=0*50300*51051
+./src/ALU.vhd~ALU=0*61539*61870
+./src/ALU.vhd~structALU=0*62912*63759
 ./src/Adder-16bit_TB.vhd~Adder_16bit_TB=0*14517*14700
 ./src/Adder-16bit_TB.vhd~BehavioralAdder_16bit_tb=0*31876*32981
 ./src/Adder-16bit_TB.vhd~simAdder_16bit_TB=0*18296*19194
@@ -37,17 +56,20 @@ V=0*3991
 ./src/Adder_16bit_TB.vhd~simAdder_16bit_TB=0*47904*48655
 ./src/Full_Adder.vhd~DataFlowFull_Adder=0*39418*39618
 ./src/Full_Adder.vhd~Full_Adder=0*3230*3444
-ModifyID=136
+./src/OP_codes.vhd~alu_pkg=0*56291*56839
+ModifyID=177
 Version=73
 
 [~MFT]
-0=142|0design0.mgf|48655|34422
-1=19|1design0.mgf|26980|19887
-3=28|3design0.mgf|11991|9730
+0=187|0design0.mgf|70295|44373
+1=26|1design0.mgf|40604|24936
+3=34|3design0.mgf|17780|9730
 
 [~U]
 adder_16bit=Adder_16bit 11|0*6000|0*6244
 adder_16bit_tb=11|0*45961|0*46044
-alu=ALU 11|0*356|0*568
+alu=11|0*63822|0*64042
+alu_pkg=3||0*56905
+alu_tb=ALU_TB 11|0*70017|0*70076
 full_adder=Full_Adder 11|0*3515|0*3717
 
