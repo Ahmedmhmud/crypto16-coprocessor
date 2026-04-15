@@ -1,17 +1,39 @@
-timestamp=1776242502324
+timestamp=1776246173182
+
+[adder_16bit]
+A/struct=21|./src/Adder_16bit.vhd|16|1*9960
+B/struct=3*887
+H/struct=0*12358
+R=./src/Adder_16bit.vhd|5
+V=0*6718
 
 [alu]
 R=./src/ALU.vhd|5
 V=0*1199
 
+[full_adder]
+A/dataflow=A/DataFlow 21|./src/Full_Adder.vhd|13|1*2552
+B/dataflow=3*0
+H/dataflow=0*5268
+R=./src/Full_Adder.vhd|4
+V=0*3991
+
 [~A]
 ./src/ALU.vhd~ALU=0*0*299
-ModifyID=3
+./src/Adder_16bit.vhd~Adder_16bit=0*5638*5927
+./src/Adder_16bit.vhd~structAdder_16bit=0*13960*14438
+./src/Full_Adder.vhd~DataFlowFull_Adder=0*5359*5559
+./src/Full_Adder.vhd~Full_Adder=0*3230*3444
+ModifyID=41
 Version=73
 
 [~MFT]
-0=4|0design0.mgf|1199|0
+0=44|0design0.mgf|14438|5058
+1=9|1design0.mgf|9960|8684
+3=5|3design0.mgf|887|0
 
 [~U]
+adder_16bit=Adder_16bit 11|0*6000|0*6244
 alu=ALU 11|0*356|0*568
+full_adder=Full_Adder 11|0*3515|0*3717
 

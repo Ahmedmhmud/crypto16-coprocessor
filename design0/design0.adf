@@ -36,7 +36,11 @@ Selected=
 
 [Files]
 /ALU.vhd=-1
+/Full_Adder.vhd=-1
+/Adder_16bit.vhd=-1
 
 [Files.Data]
 .\src\ALU.vhd=VHDL Source Code
+.\src\Full_Adder.vhd=VHDL Source Code
+.\src\Adder_16bit.vhd=VHDL Source Code
 

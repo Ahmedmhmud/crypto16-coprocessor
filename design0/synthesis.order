@@ -1,1 +1,3 @@
 i<>.\src\ALU.vhd
+i<>.\src\Full_Adder.vhd
+i<>.\src\Adder_16bit.vhd
