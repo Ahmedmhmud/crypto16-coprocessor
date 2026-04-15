@@ -1,6 +1,0 @@
-.\src\ALU.vhd
-.\src\Full_Adder.vhd
-.\src\Adder_16bit.vhd
-.\sim\Adder_16bit_TB.vhd
-.\sim\ALU_TB.vhd
-.\src\OP_codes.vhd
