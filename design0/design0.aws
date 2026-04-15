@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+design0=design0.adf
+[Settings]
+Active=design0
+[Expand]
+design0=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

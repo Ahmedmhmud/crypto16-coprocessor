@@ -1,2 +1,4 @@
-i<>.\src\NonLinearLut.vhd
-i<>C:\Users\forsan zag\OneDrive\Desktop\NonLinearLut\NonLinearLut_TB.vhd
+i<>.\src\Adder-16bit_TB.vhd
+i<>.\sim\Adder_16bit_TB.vhd
+i<>.\sim\ALU_TB.vhd
+i<>.\src\OP_codes.vhd
