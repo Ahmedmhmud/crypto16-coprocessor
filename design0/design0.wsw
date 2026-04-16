@@ -1,15 +1,5 @@
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\Adder_16bit.vhd|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\combinational.vhd|]
 TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\Full_Adder.vhd|]
-TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\ALU.vhd|]
-TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\sim\ALU_TB.vhd|]
-TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\OP_codes.vhd|]
-TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\register_file.vhd|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\combinational_TB.vhd|]
 TemplateId=0
 ActiveDocument=1
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\src\register_file_tb.vhd|]
-TemplateId=0
