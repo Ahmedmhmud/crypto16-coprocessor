@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity crypto16coprocessor is
+entity crypto16_coprocessor is
 	port(
 		Ra, Rb, Rd, ctrl: in std_logic_vector (3 downto 0);
 		clk, res: in std_logic
 	);
 end entity;
 
-architecture behavioral of crypto16coprocessor is
+architecture behavioral of crypto16_coprocessor is
 signal ctrl_temp, Rd_temp: std_logic_vector (3 downto 0);
 signal ABus, BBus, Result: std_logic_vector (15 downto 0);
 signal wrt: std_logic;
