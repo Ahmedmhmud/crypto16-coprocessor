@@ -1,6 +1,5 @@
 library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_signed.all;
+use ieee.std_logic_1164.all; 
 
 entity combinational is
 	
@@ -39,11 +38,11 @@ begin
 	process(CTRL , alu_out , shifter_out , LUT_out) is
 	begin
 		
-		if( CTRL >= 0 and CTRL <= 7 ) then
+		if( CTRL >= x"0" and CTRL <= x"7" ) then
 			Result <= alu_out;
-		elsif( CTRL >= 8 and CTRL <= 10 ) then
+		elsif( CTRL >= x"8" and CTRL <= x"A" ) then
 			Result <= shifter_out;
-		elsif( CTRL = 11 ) then
+		elsif( CTRL = x"B" ) then
 			Result <= LUT_out;
 		else
 			Result <= x"0000";
