@@ -7,7 +7,7 @@ Crypto16 Coprocessor is a 16-bit, register-based hardware datapath that combines
 - fixed-pattern shift and rotation operations
 - nonlinear substitution through an 8-bit LUT
 
-The project is implemented in VHDL with a clear modular split between storage (`register_file`), operation selection (`combinational`), and operation engines (`ALU`, `Shifter`, `NonlinearLut`).
+The project is implemented in VHDL with a clear modular split between storage (`register_file`), operation selection (`combinational` + `control_unit`), and operation engines (`ALU`, `Shifter`, `NonlinearLut`).
 
 This codebase is suitable for educational CPU/datapath labs, crypto-primitive experiments, and as a base for extending toward an instruction-driven micro-architecture.
 
@@ -178,10 +178,20 @@ The shifter uses `unsigned` conversions to apply shift/rotate operators and cast
 - `0110` -> ALU_MOVE
 
 ### Global result source selection (`combinational.vhd`)
-- `0000` to `0111`: ALU output selected
-- `1000` to `1010`: Shifter output selected
-- `1011`: LUT output selected
-- all other codes: `x"0000"`
+
+The decode and block-select logic is centralized in `control_unit.vhd` and instantiated inside `combinational.vhd`.
+
+`control_unit` outputs:
+- `sel_block(1:0)`: selected execution block
+- `alu_en`: ALU class enable
+- `shifter_en`: Shifter class enable
+- `luu_en`: LUT class enable
+
+Decode behavior:
+- `0000` to `0111`: `sel_block="00"`, ALU enabled
+- `1000` to `1010`: `sel_block="01"`, Shifter enabled
+- `1011`: `sel_block="10"`, LUT enabled
+- all other codes: invalid/default path (`sel_block="11"`, all enables low, `Result=x"0000"`)
 
 ### Special note on `0111`
 - `0111` is routed to ALU selection range in `combinational`
@@ -209,6 +219,7 @@ Testbenches provided in `sim/` validate unit-level and integrated behavior.
 - `shifter_TB.vhd`: all listed shift controls and out-of-range fallback
 - `NonLinearLut_TB.vhd`: LUT nibble substitution sweep (directed loop values)
 - `register_file_TB.vhd`: reset, write enable, readback path behavior
+- `control_unit_TB.vhd`: control decode class sweep (ALU/Shifter/LUT/invalid)
 
 ### Integration benches
 - `combinational_TB.vhd`: source multiplexing across ALU/Shifter/LUT regions
@@ -220,6 +231,6 @@ The benches are directed-stimulus simulations with expected outcomes documented 
 ## Design Characteristics and Practical Notes
 - The design is modular and readable, with clear unit boundaries.
 - Arithmetic is structurally explicit via ripple-carry adder composition.
-- `combinational.vhd` currently relies on `ieee.std_logic_signed` for numeric comparison of `CTRL`; migrating to `numeric_std` with explicit `unsigned` casts can improve portability.
+- Global decode ownership is now in `control_unit.vhd`, instantiated by `combinational.vhd` for block selection.
 - `Rd_temp` is written in top-level process but not used for destination selection in current implementation.
 - Write-enable behavior tied to `ctrl_temp` introduces a delayed control effect by construction.
