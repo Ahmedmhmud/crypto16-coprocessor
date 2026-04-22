@@ -16,5 +16,7 @@ TemplateId=0
 TemplateId=0
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\ALU.vhd|]
 TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\crypto16_coprocessor_TB.vhd|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\control_unit.vhd|]
+TemplateId=0
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\sim\crypto16_coprocessor_TB.vhd|]
 TemplateId=0
