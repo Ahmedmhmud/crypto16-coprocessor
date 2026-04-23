@@ -15,58 +15,42 @@ end entity;
 
 architecture rtl of combinational is
 
-signal alu_out , shifter_out , LUT_out : std_logic_vector(15 downto 0);
+signal alu_out , shifter_out : std_logic_vector(15 downto 0);
 signal LUT_out_temp : std_logic_vector(7 downto 0);
 signal sel_block : std_logic_vector(1 downto 0);
-signal alu_en, shifter_en, luu_en : std_logic;
+signal alu_op : std_logic_vector(2 downto 0);
+signal shift_op : std_logic_vector(1 downto 0);
 
 begin
 	
-	ControlUnit: entity work.control_unit(behavoiral)
+	ControlUnit: entity control_unit
 		port map (
 			ctrl => CTRL,
 			sel_block => sel_block,
-			alu_en => alu_en,
-			shifter_en => shifter_en,
-			luu_en => luu_en
+			alu_op => alu_op,
+			shift_op => shift_op
 		);
 	
-	ALU: entity work.alu(struct)
-		port map (
-			ABus => ABUS,
-			BBus => BBUS,
-			Ctrl => CTRL,
-			Result => alu_out
-		);
+	ALU: entity alu
+		port map ( ABUS , BBUS , alu_op , alu_out );
 		
 		
-	Shifter: entity work.shifter(rtl)
-		port map (
-			shiftinput => BBUS,
-			shift_Ctrl => CTRL,
-			shiftout => shifter_out
-		);
+	Shifter: entity shifter
+		port map ( BBUS , shift_op , shifter_out );
 		
 		
-	nonLinearLUT: entity work.nonLinearLUT(arch)
-		port map (
-			LutIn => ABUS(7 downto 0),
-			LutOut => LUT_out_temp
-		);
-		
-		
-	LUT_out <= ABUS(15 downto 8) & LUT_out_temp;
+	nonLinearLUT: entity nonLinearLUT
+		port map ( ABUS(7 downto 0) , LUT_out_temp );	
 	
-	
-	process(sel_block, alu_en, shifter_en, luu_en, alu_out, shifter_out, LUT_out) is
+	process(sel_block, alu_out, shifter_out, ABUS, LUT_out_temp) is
 	begin
 		
-		if(alu_en = '1' and sel_block = "00") then
+		if(sel_block = "00") then
 			Result <= alu_out;
-		elsif(shifter_en = '1' and sel_block = "01") then
+		elsif(sel_block = "01") then
 			Result <= shifter_out;
-		elsif(luu_en = '1' and sel_block = "10") then
-			Result <= LUT_out;
+		elsif(sel_block = "10") then
+			Result <= ABUS(15 downto 8) & LUT_out_temp;
 		else
 			Result <= x"0000";
 		end if;

@@ -9,7 +9,7 @@ end entity;
 architecture sim of ALU_TB is 
 
 Signal ABus_tb,BBus_tb : std_logic_vector(15 downto 0) := (others => '0'); 
-signal Ctrl_tb   : std_logic_vector(3 downto 0)  := (others => '0');
+signal Ctrl_tb   : std_logic_vector(2 downto 0)  := (others => '0');
     
 signal Result_tb : std_logic_vector(15 downto 0);
 

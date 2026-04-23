@@ -10,6 +10,7 @@ end entity ;
 
 architecture arch of NonlinearLut is 
 signal S_Box1,S_Box2 : std_logic_vector (3 downto 0);							
+signal LutOut_calc : std_logic_vector (7 downto 0);
 begin 
 	
 	S_Box1 <= LutIn(7 downto 4);	
@@ -17,7 +18,7 @@ begin
 	S_Box2 <= LutIn(3 downto 0);
 	
 	with S_Box1 select
-	LutOut(7 downto 4) <= "0001" when "0000",
+	LutOut_calc(7 downto 4) <= "0001" when "0000",
 						  "1011" when "0001",
 						  "1001" when "0010",
 						  "1100" when "0011",
@@ -36,7 +37,7 @@ begin
 						  "0000" when others;	 
 						
 	with S_Box2 select
-	LutOut(3 downto 0) <= "1111" when "0000",
+	LutOut_calc(3 downto 0) <= "1111" when "0000",
 						  "0000" when "0001",
 						  "1101" when "0010",
 						  "0111" when "0011",
@@ -53,5 +54,7 @@ begin
 						  "1000" when "1110", 
 						  "0110" when "1111",
 						  "0000" when others;
+
+	LutOut <= LutOut_calc;
 
 end architecture ;	

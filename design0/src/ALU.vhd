@@ -6,7 +6,7 @@ entity ALU is
 	port(
 		ABus : in std_logic_vector(15 downto 0);
 		BBus : in std_logic_vector(15 downto 0);
-		Ctrl : in std_logic_vector(3 downto 0);
+		Ctrl : in std_logic_vector(2 downto 0);
 		
 		Result : out std_logic_vector(15 downto 0)	
 		);
@@ -44,7 +44,6 @@ arithmetic_unit : entity Adder_16bit
 process(Ctrl, ABus, BBus, adder_sum)
     
 begin
-        
 	case Ctrl is
    
 		when ALU_ADD  => Result <= adder_sum;             
@@ -59,7 +58,7 @@ begin
            
 		when others   => Result <= (others => '0');
         
-	end case;
+		end case;
     
 end process;
 	
