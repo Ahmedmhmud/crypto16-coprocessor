@@ -15,13 +15,13 @@ signal wrt: std_logic;
 begin
 	-- Combinational logic declaration
 	combinational: entity combinational
-		port map(ABus, BBus, ctrl, Result);
+		port map(ABus, BBus, ctrl_temp, Result);
 	
 	-- Register file declaration
 	register_file: entity register_file
-		port map(clk, res, wrt, Ra, Rb, Rd, Result, ABus, BBus);
+		port map(clk, res, wrt, Ra, Rb, Rd_temp, Result, ABus, BBus);
 		
-	process (clk, res) is
+	process (clk) is
 	begin
 		if(rising_edge(clk)) then
 			if(res = '1') then
@@ -30,7 +30,7 @@ begin
 			else
 				Rd_temp <= Rd;
 				ctrl_temp <= ctrl;
-				if(ctrl_temp = "0111") then
+				if(ctrl = "0111") then
 					wrt <= '0';
 				else
 					wrt <= '1';		 
