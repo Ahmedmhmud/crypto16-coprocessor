@@ -22,5 +22,6 @@ begin
 				std_logic_vector(unsigned(shiftinput) ror 4) when "01",
 				  std_logic_vector(unsigned(shiftinput) sll 8) when "10",
 			   (others => '0')  when others ;
+	shiftout <= shift_calc;
 
 end architecture;
